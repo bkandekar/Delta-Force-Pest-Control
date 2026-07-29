@@ -40,6 +40,7 @@ const SERVICES_LIST = [
     icon: "🐜",
     badge: "Most Popular",
     title: "General Pest Control",
+    image: "images/service-general.webp",
     desc: "Comprehensive herbal spray & gel baiting targeting ants, silverfish, spiders, and common household insects.",
     features: ["100% Safe for Children & Pets", "Odorless Chemical Solution", "Single Visit or Quarterly AMC"],
     price: "Starts at ₹1,199"
@@ -48,6 +49,7 @@ const SERVICES_LIST = [
     icon: "🪳",
     badge: "High Demand",
     title: "Cockroach Control",
+    image: "images/service-cockroach.webp",
     desc: "Advanced German cockroach eradication using odorless Bayer gel baiting in kitchens, cabinets & drains.",
     features: ["No Need to Empty Kitchen", "Odorless Herbal Gel", "100% Eradication Guarantee"],
     price: "Starts at ₹1,499"
@@ -56,6 +58,7 @@ const SERVICES_LIST = [
     icon: "🪵",
     badge: "5-Yr Warranty",
     title: "Termite Control",
+    image: "images/service-termite.webp",
     desc: "Deep drill-fill-seal subterranean termite barrier treatment protecting woodwork and structural foundations.",
     features: ["5-Year Written Warranty", "Government Approved Chemical", "Prevents Structural Damage"],
     price: "Starts at ₹3,499"
@@ -64,6 +67,7 @@ const SERVICES_LIST = [
     icon: "🛏️",
     badge: "100% Elimination",
     title: "Bed Bug Treatment",
+    image: "images/service-bedbug.webp",
     desc: "Comprehensive 2-session spray treatment destroying live bed bugs, nymphs, and unhatched eggs in mattresses.",
     features: ["2-Stage Deep Treatment", "High Temperature Spray", "Sleep Peacefully Tonight"],
     price: "Starts at ₹1,899"
@@ -72,6 +76,7 @@ const SERVICES_LIST = [
     icon: "🐀",
     badge: "Commercial Grade",
     title: "Rodent Control",
+    image: "images/service-rodent.webp",
     desc: "Trapping, tamper-resistant poison baiting, and entry-point audit against rats and mice for businesses & homes.",
     features: ["Safe Poison Bait Stations", "Entry Point Audit", "Prevents Wire Damage"],
     price: "Starts at ₹1,599"
@@ -80,6 +85,7 @@ const SERVICES_LIST = [
     icon: "🦟",
     badge: "Outdoor & Indoor",
     title: "Mosquito Control",
+    image: "images/service-mosquito.webp",
     desc: "Thermal fogging and bio-larvicide spraying in garden, balcony, and drain areas to halt mosquito breeding.",
     features: ["Halts Dengue & Malaria", "Outdoor Fogging", "Safe Herbal Larvicide"],
     price: "Starts at ₹1,299"
@@ -88,6 +94,7 @@ const SERVICES_LIST = [
     icon: "🪵",
     badge: "Wood Protection",
     title: "Wood Borer Treatment",
+    image: "images/service-woodborer.webp",
     desc: "Specialized oil-base chemical injection into wooden furniture, doors, and cabinets to destroy wood borer larvae.",
     features: ["Syringe Injection", "Preserves Expensive Furniture", "2-Year Warranty"],
     price: "Starts at ₹2,199"
@@ -96,6 +103,7 @@ const SERVICES_LIST = [
     icon: "🐝",
     badge: "High-Reach Safe",
     title: "Hornet & Wasp Extermination",
+    image: "images/service-hornet.webp",
     desc: "Safe removal of wasp and hornet nests from high building ledges and balconies without stings.",
     features: ["Certified Safety Gear", "Complete Nest Removal", "Prevents Re-nesting"],
     price: "Starts at ₹1,299"
@@ -104,6 +112,7 @@ const SERVICES_LIST = [
     icon: "🕷️",
     badge: "Deep Clean",
     title: "Spider Extermination",
+    image: "images/service-spider.webp",
     desc: "Web removal and residual chemical spraying on ceilings, corners, and window frames.",
     features: ["Web Removal Included", "Long Lasting Barrier", "Clean Finish"],
     price: "Starts at ₹999"
@@ -112,6 +121,7 @@ const SERVICES_LIST = [
     icon: "🐝",
     badge: "Eco Removal",
     title: "Bee Removal",
+    image: "images/service-bee.webp",
     desc: "Humane and safe relocation/removal of wild beehives from residential roofs and balconies.",
     features: ["Non-toxic Method", "Eco Relocation", "Immediate Response"],
     price: "Starts at ₹1,499"
@@ -120,6 +130,7 @@ const SERVICES_LIST = [
     icon: "📝",
     badge: "Save 20%",
     title: "Annual Maintenance Contract (AMC)",
+    image: "images/service-amc.webp",
     desc: "Year-round protection covering 3 to 4 scheduled visits per year with free emergency call-outs.",
     features: ["3-4 Scheduled Services/Yr", "Free Emergency Support", "Best Value for Homes"],
     price: "Starts at ₹3,999/yr"
@@ -141,7 +152,7 @@ const REVIEWS = [
     service: "Termite Control", 
     stars: "⭐⭐⭐⭐⭐", 
     comment: "Termites were destroying my wooden wardrobes in Jule Solapur. Delta Force completed the drill-fill treatment 2 years ago and not a single termite has returned. Exceptional service and clear written warranty!",
-    photoPlaceholder: "[PLACEHOLDER: Customer photo — Google Drawings 200x200 circular]"
+    image: "images/review-prakash.webp"
   },
   { 
     name: "Dr. Anjali Patil", 
@@ -149,7 +160,7 @@ const REVIEWS = [
     service: "Cockroach Herbal Gel", 
     stars: "⭐⭐⭐⭐⭐", 
     comment: "The odorless herbal gel treatment was completed without having to vacate or shift any kitchen items in my clinic residential quarters on Vijayapur Road. Very professional and polite staff.",
-    photoPlaceholder: "[PLACEHOLDER: Customer photo — Google Drawings 200x200 circular]"
+    image: "images/review-anjali.webp"
   },
   { 
     name: "Suresh Kulkarni", 
@@ -157,7 +168,7 @@ const REVIEWS = [
     service: "Bed Bug Treatment", 
     stars: "⭐⭐⭐⭐⭐", 
     comment: "We struggled with bed bugs for over two months. Delta Force did a 2-stage extermination process in our Sat Rasta home and eliminated them completely. Slept peacefully from day one!",
-    photoPlaceholder: "[PLACEHOLDER: Customer photo — Google Drawings 200x200 circular]"
+    image: "images/review-suresh.webp"
   },
   { 
     name: "Vikram Shah (Hotel Manager)", 
@@ -165,7 +176,7 @@ const REVIEWS = [
     service: "Commercial AMC", 
     stars: "⭐⭐⭐⭐⭐", 
     comment: "We hired Delta Force for an Annual Maintenance Contract for our restaurant and kitchen on Hotgi Road. Prompt quarterly visits, eco-friendly chemicals, and zero customer complaints.",
-    photoPlaceholder: "[PLACEHOLDER: Customer photo — Google Drawings 200x200 circular]"
+    image: "images/review-vikram.webp"
   }
 ];
 
@@ -306,21 +317,26 @@ function renderServices() {
   if (!container) return;
   container.innerHTML = SERVICES_LIST.map(s => `
     <div class="service-card">
-      <div class="service-card-top">
-        <div class="service-icon">${s.icon}</div>
-        <span class="service-badge">${s.badge}</span>
+      <div class="service-image-container">
+        <img src="${s.image}" alt="${s.title}" class="service-card-img" loading="lazy" onerror="this.onerror=null; this.style.display='none';">
+        <span class="service-badge-overlay">${s.badge}</span>
       </div>
-      <h3 class="service-title">${s.title}</h3>
-      <p class="service-desc">${s.desc}</p>
-      <ul class="service-features">
-        ${s.features.map(f => `<li>${f}</li>`).join('')}
-      </ul>
-      <div class="service-card-bottom">
-        <div>
-          <span class="service-price-label">${s.price.startsWith('Starts') ? '' : 'Starting at'}</span>
-          <span class="service-price-val">${s.price}</span>
+      <div class="service-card-content">
+        <div class="service-card-top">
+          <div class="service-icon">${s.icon}</div>
+          <h3 class="service-title">${s.title}</h3>
         </div>
-        <button class="btn btn-primary" onclick="bookPresetService('${s.title}', '${s.price}')">Get Quote</button>
+        <p class="service-desc">${s.desc}</p>
+        <ul class="service-features">
+          ${s.features.map(f => `<li>${f}</li>`).join('')}
+        </ul>
+        <div class="service-card-bottom">
+          <div>
+            <span class="service-price-label">${s.price.startsWith('Starts') ? '' : 'Starting at'}</span>
+            <span class="service-price-val">${s.price}</span>
+          </div>
+          <button class="btn btn-primary" onclick="bookPresetService('${s.title}', '${s.price}')">Get Quote</button>
+        </div>
       </div>
     </div>
   `).join('');
@@ -345,7 +361,6 @@ function renderReviews() {
   const container = document.getElementById("reviewsGrid");
   if (!container) return;
   container.innerHTML = REVIEWS.map(r => `
-    <!-- SAMPLE TESTIMONIAL — replace with real customer quote before going live -->
     <div class="review-card">
       <div class="review-top">
         <span class="review-stars">${r.stars}</span>
@@ -353,9 +368,7 @@ function renderReviews() {
       </div>
       <p class="review-comment">"${r.comment}"</p>
       <div class="review-author" style="display: flex; align-items: center; gap: 12px; margin-top: 16px;">
-        <div class="avatar-circle" style="width: 42px; height: 42px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem;" title="${r.photoPlaceholder || ''}">
-          ${r.name.split(' ').map(n => n[0]).join('')}
-        </div>
+        <img src="${r.image}" alt="${r.name}" class="review-avatar-img" loading="lazy" onerror="this.onerror=null; this.outerHTML='<div class=\'avatar-circle\' style=\'width: 48px; height: 48px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 700;\'>${r.name.split(' ').map(n => n[0]).join('')}</div>';">
         <div>
           <div class="review-name" style="font-weight: 700; font-size: 0.95rem;">${r.name}</div>
           <div class="review-meta" style="font-size: 0.825rem; color: var(--text-muted);">${r.locality} • ${r.service}</div>
