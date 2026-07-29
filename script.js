@@ -42,11 +42,8 @@ const PAIN_POINTS = [
 /* SERVICES SECTION DATA
    Controls the service cards rendered by renderServices() into #servicesGrid (index.html).
    To add a new service, add a new object below with icon, badge, title, desc, features (array), price,
-   and imgPlaceholderId (a unique id used only for the placeholder label + future filename reference) —
-   no other code changes needed.
-   Each card now includes a photo placeholder box. When real photos are ready, generate one image per
-   service named "images/<imgPlaceholderId>.webp" and swap the placeholder-box for an <img> tag in
-   renderServices() below (see the image swap note in that function). */
+   and imgPlaceholderId (used as the image filename: images/<imgPlaceholderId>.webp) —
+   no other code changes needed. Each card now shows a real photo from that file. */
 const SERVICES_LIST = [
   {
     icon: "🐜",
@@ -162,11 +159,8 @@ const PROCESS_STEPS = [
 /* SAMPLE TESTIMONIAL — replace with real customer quote before going live
    Controls the testimonial cards rendered by renderReviews() into #reviewsGrid (index.html).
    To add a new review, add a new object below with name, locality, service, stars, comment, and
-   photoPlaceholderId (a unique id used only for the placeholder label + future filename reference) —
-   no other code changes needed. Replace every sample entry with a real, verified customer quote before launch.
-   Each card now shows a round photo placeholder box (with initials as a temporary fallback visual).
-   When a real photo is ready, generate one image named "images/<photoPlaceholderId>.webp" and swap the
-   placeholder box for an <img> tag in renderReviews() below (see the image swap note in that function). */
+   photoPlaceholderId (used as the image filename: images/<photoPlaceholderId>.webp) —
+   no other code changes needed. Replace every sample entry with a real, verified customer quote before launch. */
 const REVIEWS = [
   { 
     name: "Prakash Deshmukh", 
@@ -269,10 +263,9 @@ function renderServices() {
         <span class="service-badge">${s.badge}</span>
       </div>
 
-      <!-- Service photo placeholder. Once images/${s.imgPlaceholderId}.webp exists, replace this
-           placeholder-box with: <div class="service-img-placeholder"><img src="images/${s.imgPlaceholderId}.webp" alt="${s.title}"></div> -->
+      <!-- Service photo — wired to images/${s.imgPlaceholderId}.webp -->
       <div class="placeholder-box service-img-placeholder" data-placeholder-id="${s.imgPlaceholderId}">
-        <div class="placeholder-text">[PLACEHOLDER: ${s.title} service photo — Google Drawings 600x400]</div>
+        <img src="images/${s.imgPlaceholderId}.webp" alt="${s.title} - Delta Force Pest Control Solapur" loading="lazy">
       </div>
 
       <h3 class="service-title">${s.title}</h3>
@@ -313,11 +306,9 @@ function renderReviews() {
     <!-- SAMPLE TESTIMONIAL — replace with real customer quote before going live -->
     <div class="review-card">
       <div class="review-top">
-        <!-- Customer photo placeholder (initials shown as a temporary fallback visual).
-             Once images/${r.photoPlaceholderId}.webp exists, replace this placeholder-box with:
-             <div class="review-img-placeholder"><img src="images/${r.photoPlaceholderId}.webp" alt="${r.name}"></div> -->
-        <div class="placeholder-box review-img-placeholder" data-placeholder-id="${r.photoPlaceholderId}" title="[PLACEHOLDER: Customer photo — Google Drawings 200x200 circular]">
-          ${r.name.split(' ').map(n => n[0]).join('')}
+        <!-- Customer photo — wired to images/${r.photoPlaceholderId}.webp -->
+        <div class="placeholder-box review-img-placeholder" data-placeholder-id="${r.photoPlaceholderId}">
+          <img src="images/${r.photoPlaceholderId}.webp" alt="${r.name}" loading="lazy">
         </div>
         <span class="review-stars">${r.stars}</span>
         <span class="review-verified">✔ Verified Customer</span>
