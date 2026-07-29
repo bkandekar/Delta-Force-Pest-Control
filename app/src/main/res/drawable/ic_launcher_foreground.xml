@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Golden Amber Shield & Bug Checkmark -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M54,22 L82,35 V56 C82,73.5 54,87 54,87 C54,87 26,73.5 26,56 V35 Z" />
+    <!-- Inner Dark Shield Accent -->
+    <path
+        android:fillColor="#0F5132"
+        android:pathData="M54,28 L76,38 V55 C76,69 54,80 54,80 C54,80 32,69 32,55 V38 Z" />
+    <!-- Checkmark and Eco Leaf Symbol -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M48,63 L38,53 L42,49 L48,55 L66,37 L70,41 Z" />
+</vector>

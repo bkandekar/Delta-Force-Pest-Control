@@ -1,0 +1,6 @@
+{
+  "name": "Delta Force Pest Control",
+  "description": "Delta Force Pest Control & Sanitization Services in Solapur. Instant treatment cost calculator, eco-friendly services, and direct booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
