@@ -12,6 +12,10 @@ const BUSINESS_CONFIG = {
 };
 
 /* DATA CONSTANTS — PHASE 2 REFINED CONTENT */
+
+/* PAIN POINTS SECTION DATA
+   Controls the "pain point -> solution" cards rendered by renderPainPoints() into #painPointsGrid (index.html).
+   To add a new pain point, add a new { pain, solution } object below — no other code changes needed. */
 const PAIN_POINTS = [
   { 
     pain: "I've tried treatments before but pests keep coming back", 
@@ -35,6 +39,10 @@ const PAIN_POINTS = [
   }
 ];
 
+/* SERVICES SECTION DATA
+   Controls the service cards rendered by renderServices() into #servicesGrid (index.html).
+   To add a new service, add a new object below with icon, badge, title, desc, features (array), and price —
+   no other code changes needed. */
 const SERVICES_LIST = [
   {
     icon: "🐜",
@@ -126,6 +134,9 @@ const SERVICES_LIST = [
   }
 ];
 
+/* "HOW IT WORKS" PROCESS STEPS DATA
+   Controls the 4-step process cards rendered by renderProcess() into #processGrid (index.html).
+   To add, remove, or reorder a step, edit the array below — no other code changes needed. */
 const PROCESS_STEPS = [
   { step: "1", title: "Instant Booking / Estimate", desc: "Select service or use our cost calculator to submit your inquiry via WhatsApp or direct booking." },
   { step: "2", title: "Free On-Site Inspection", desc: "Our certified technician arrives at your Solapur property for a thorough pest audit." },
@@ -133,7 +144,10 @@ const PROCESS_STEPS = [
   { step: "4", title: "Warranty & AMC Support", desc: "Receive your official written warranty certificate and automated maintenance reminders." }
 ];
 
-/* SAMPLE TESTIMONIAL — replace with real customer quote before going live */
+/* SAMPLE TESTIMONIAL — replace with real customer quote before going live
+   Controls the testimonial cards rendered by renderReviews() into #reviewsGrid (index.html).
+   To add a new review, add a new object below with name, locality, service, stars, comment, and photoPlaceholder —
+   no other code changes needed. Replace every sample entry with a real, verified customer quote before launch. */
 const REVIEWS = [
   { 
     name: "Prakash Deshmukh", 
@@ -178,7 +192,8 @@ document.addEventListener("DOMContentLoaded", () => {
   calculateEstimate();
 });
 
-/* CALCULATOR LOGIC */
+/* CALCULATOR LOGIC
+   Updates #calcEstimateText in index.html live whenever any of the 4 calculator selects change. */
 function calculateEstimate() {
   const propType = document.getElementById("calcPropertyType").value;
   const size = document.getElementById("calcPropertySize").value;
