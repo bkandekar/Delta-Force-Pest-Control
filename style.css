@@ -366,8 +366,18 @@ body {
   color: #6C757D;
 }
 
-.text-white { color: var(--surface-white) !important; }
-.text-light-muted { color: rgba(255, 255, 255, 0.8) !important; }
+/* Rule 2 fix: dark/colored-background section headers get an explicit,
+   higher-specificity contextual override instead of a standalone
+   !important utility class. This targets the h2/p directly inside
+   .section-header.light-text (used on dark-bg sections like "Why Us"),
+   so contrast is guaranteed without needing !important anywhere. */
+.section-header.light-text h2 {
+  color: var(--surface-white);
+}
+
+.section-header.light-text p {
+  color: rgba(255, 255, 255, 0.8);
+}
 
 /* ==========================================================================
    PAIN POINTS GRID
@@ -803,6 +813,7 @@ body {
   font-size: 26px;
   font-weight: 800;
   margin-bottom: 10px;
+  color: var(--surface-white);
 }
 
 .cta-desc {
