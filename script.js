@@ -12,6 +12,10 @@ const BUSINESS_CONFIG = {
 };
 
 /* DATA CONSTANTS — PHASE 2 REFINED CONTENT */
+
+/* PAIN POINTS SECTION DATA
+   Controls the "pain point -> solution" cards rendered by renderPainPoints() into #painPointsGrid (index.html).
+   To add a new pain point, add a new { pain, solution } object below — no other code changes needed. */
 const PAIN_POINTS = [
   { 
     pain: "I've tried treatments before but pests keep coming back", 
@@ -35,6 +39,14 @@ const PAIN_POINTS = [
   }
 ];
 
+/* SERVICES SECTION DATA
+   Controls the service cards rendered by renderServices() into #servicesGrid (index.html).
+   To add a new service, add a new object below with icon, badge, title, desc, features (array), price,
+   and imgPlaceholderId (a unique id used only for the placeholder label + future filename reference) —
+   no other code changes needed.
+   Each card now includes a photo placeholder box. When real photos are ready, generate one image per
+   service named "images/<imgPlaceholderId>.webp" and swap the placeholder-box for an <img> tag in
+   renderServices() below (see the image swap note in that function). */
 const SERVICES_LIST = [
   {
     icon: "🐜",
@@ -42,7 +54,8 @@ const SERVICES_LIST = [
     title: "General Pest Control",
     desc: "Comprehensive herbal spray & gel baiting targeting ants, silverfish, spiders, and common household insects.",
     features: ["100% Safe for Children & Pets", "Odorless Chemical Solution", "Single Visit or Quarterly AMC"],
-    price: "Starts at ₹1,199"
+    price: "Starts at ₹1,199",
+    imgPlaceholderId: "service-general"
   },
   {
     icon: "🪳",
@@ -50,7 +63,8 @@ const SERVICES_LIST = [
     title: "Cockroach Control",
     desc: "Advanced German cockroach eradication using odorless Bayer gel baiting in kitchens, cabinets & drains.",
     features: ["No Need to Empty Kitchen", "Odorless Herbal Gel", "100% Eradication Guarantee"],
-    price: "Starts at ₹1,499"
+    price: "Starts at ₹1,499",
+    imgPlaceholderId: "service-cockroach"
   },
   {
     icon: "🪵",
@@ -58,7 +72,8 @@ const SERVICES_LIST = [
     title: "Termite Control",
     desc: "Deep drill-fill-seal subterranean termite barrier treatment protecting woodwork and structural foundations.",
     features: ["5-Year Written Warranty", "Government Approved Chemical", "Prevents Structural Damage"],
-    price: "Starts at ₹3,499"
+    price: "Starts at ₹3,499",
+    imgPlaceholderId: "service-termite"
   },
   {
     icon: "🛏️",
@@ -66,7 +81,8 @@ const SERVICES_LIST = [
     title: "Bed Bug Treatment",
     desc: "Comprehensive 2-session spray treatment destroying live bed bugs, nymphs, and unhatched eggs in mattresses.",
     features: ["2-Stage Deep Treatment", "High Temperature Spray", "Sleep Peacefully Tonight"],
-    price: "Starts at ₹1,899"
+    price: "Starts at ₹1,899",
+    imgPlaceholderId: "service-bedbug"
   },
   {
     icon: "🐀",
@@ -74,7 +90,8 @@ const SERVICES_LIST = [
     title: "Rodent Control",
     desc: "Trapping, tamper-resistant poison baiting, and entry-point audit against rats and mice for businesses & homes.",
     features: ["Safe Poison Bait Stations", "Entry Point Audit", "Prevents Wire Damage"],
-    price: "Starts at ₹1,599"
+    price: "Starts at ₹1,599",
+    imgPlaceholderId: "service-rodent"
   },
   {
     icon: "🦟",
@@ -82,7 +99,8 @@ const SERVICES_LIST = [
     title: "Mosquito Control",
     desc: "Thermal fogging and bio-larvicide spraying in garden, balcony, and drain areas to halt mosquito breeding.",
     features: ["Halts Dengue & Malaria", "Outdoor Fogging", "Safe Herbal Larvicide"],
-    price: "Starts at ₹1,299"
+    price: "Starts at ₹1,299",
+    imgPlaceholderId: "service-mosquito"
   },
   {
     icon: "🪵",
@@ -90,7 +108,8 @@ const SERVICES_LIST = [
     title: "Wood Borer Treatment",
     desc: "Specialized oil-base chemical injection into wooden furniture, doors, and cabinets to destroy wood borer larvae.",
     features: ["Syringe Injection", "Preserves Expensive Furniture", "2-Year Warranty"],
-    price: "Starts at ₹2,199"
+    price: "Starts at ₹2,199",
+    imgPlaceholderId: "service-woodborer"
   },
   {
     icon: "🐝",
@@ -98,7 +117,8 @@ const SERVICES_LIST = [
     title: "Hornet & Wasp Extermination",
     desc: "Safe removal of wasp and hornet nests from high building ledges and balconies without stings.",
     features: ["Certified Safety Gear", "Complete Nest Removal", "Prevents Re-nesting"],
-    price: "Starts at ₹1,299"
+    price: "Starts at ₹1,299",
+    imgPlaceholderId: "service-hornet"
   },
   {
     icon: "🕷️",
@@ -106,7 +126,8 @@ const SERVICES_LIST = [
     title: "Spider Extermination",
     desc: "Web removal and residual chemical spraying on ceilings, corners, and window frames.",
     features: ["Web Removal Included", "Long Lasting Barrier", "Clean Finish"],
-    price: "Starts at ₹999"
+    price: "Starts at ₹999",
+    imgPlaceholderId: "service-spider"
   },
   {
     icon: "🐝",
@@ -114,7 +135,8 @@ const SERVICES_LIST = [
     title: "Bee Removal",
     desc: "Humane and safe relocation/removal of wild beehives from residential roofs and balconies.",
     features: ["Non-toxic Method", "Eco Relocation", "Immediate Response"],
-    price: "Starts at ₹1,499"
+    price: "Starts at ₹1,499",
+    imgPlaceholderId: "service-bee"
   },
   {
     icon: "📝",
@@ -122,10 +144,14 @@ const SERVICES_LIST = [
     title: "Annual Maintenance Contract (AMC)",
     desc: "Year-round protection covering 3 to 4 scheduled visits per year with free emergency call-outs.",
     features: ["3-4 Scheduled Services/Yr", "Free Emergency Support", "Best Value for Homes"],
-    price: "Starts at ₹3,999/yr"
+    price: "Starts at ₹3,999/yr",
+    imgPlaceholderId: "service-amc"
   }
 ];
 
+/* "HOW IT WORKS" PROCESS STEPS DATA
+   Controls the 4-step process cards rendered by renderProcess() into #processGrid (index.html).
+   To add, remove, or reorder a step, edit the array below — no other code changes needed. */
 const PROCESS_STEPS = [
   { step: "1", title: "Instant Booking / Estimate", desc: "Select service or use our cost calculator to submit your inquiry via WhatsApp or direct booking." },
   { step: "2", title: "Free On-Site Inspection", desc: "Our certified technician arrives at your Solapur property for a thorough pest audit." },
@@ -133,7 +159,14 @@ const PROCESS_STEPS = [
   { step: "4", title: "Warranty & AMC Support", desc: "Receive your official written warranty certificate and automated maintenance reminders." }
 ];
 
-/* SAMPLE TESTIMONIAL — replace with real customer quote before going live */
+/* SAMPLE TESTIMONIAL — replace with real customer quote before going live
+   Controls the testimonial cards rendered by renderReviews() into #reviewsGrid (index.html).
+   To add a new review, add a new object below with name, locality, service, stars, comment, and
+   photoPlaceholderId (a unique id used only for the placeholder label + future filename reference) —
+   no other code changes needed. Replace every sample entry with a real, verified customer quote before launch.
+   Each card now shows a round photo placeholder box (with initials as a temporary fallback visual).
+   When a real photo is ready, generate one image named "images/<photoPlaceholderId>.webp" and swap the
+   placeholder box for an <img> tag in renderReviews() below (see the image swap note in that function). */
 const REVIEWS = [
   { 
     name: "Prakash Deshmukh", 
@@ -141,7 +174,7 @@ const REVIEWS = [
     service: "Termite Control", 
     stars: "⭐⭐⭐⭐⭐", 
     comment: "Termites were destroying my wooden wardrobes in Jule Solapur. Delta Force completed the drill-fill treatment 2 years ago and not a single termite has returned. Exceptional service and clear written warranty!",
-    photoPlaceholder: "[PLACEHOLDER: Customer photo — Google Drawings 200x200 circular]"
+    photoPlaceholderId: "review-prakash"
   },
   { 
     name: "Dr. Anjali Patil", 
@@ -149,7 +182,7 @@ const REVIEWS = [
     service: "Cockroach Herbal Gel", 
     stars: "⭐⭐⭐⭐⭐", 
     comment: "The odorless herbal gel treatment was completed without having to vacate or shift any kitchen items in my clinic residential quarters on Vijayapur Road. Very professional and polite staff.",
-    photoPlaceholder: "[PLACEHOLDER: Customer photo — Google Drawings 200x200 circular]"
+    photoPlaceholderId: "review-anjali"
   },
   { 
     name: "Suresh Kulkarni", 
@@ -157,7 +190,7 @@ const REVIEWS = [
     service: "Bed Bug Treatment", 
     stars: "⭐⭐⭐⭐⭐", 
     comment: "We struggled with bed bugs for over two months. Delta Force did a 2-stage extermination process in our Sat Rasta home and eliminated them completely. Slept peacefully from day one!",
-    photoPlaceholder: "[PLACEHOLDER: Customer photo — Google Drawings 200x200 circular]"
+    photoPlaceholderId: "review-suresh"
   },
   { 
     name: "Vikram Shah (Hotel Manager)", 
@@ -165,71 +198,9 @@ const REVIEWS = [
     service: "Commercial AMC", 
     stars: "⭐⭐⭐⭐⭐", 
     comment: "We hired Delta Force for an Annual Maintenance Contract for our restaurant and kitchen on Hotgi Road. Prompt quarterly visits, eco-friendly chemicals, and zero customer complaints.",
-    photoPlaceholder: "[PLACEHOLDER: Customer photo — Google Drawings 200x200 circular]"
+    photoPlaceholderId: "review-vikram"
   }
 ];
-
-/* PEST QUIZ / IDENTIFIER DATA & RENDER */
-const PEST_QUIZ_DATA = [
-  { name: "Cockroaches", emoji: "🪳", danger: "High Hazard", sign: "Droppings in kitchen corners, egg cases near drain pipes.", solution: "German Gel Baiting & Anti-Bacterial Spray", price: "Starts at ₹1,499" },
-  { name: "Termites", emoji: "🪵", danger: "Severe Damage", sign: "Mud tubes on walls, hollow sound from wooden doors.", solution: "Drill-Fill-Seal Subterranean Barrier (5-Yr Warranty)", price: "Starts at ₹3,499" },
-  { name: "Bed Bugs", emoji: "🛏️", danger: "Painful Bites", sign: "Red itchy skin marks, dark spots on mattress seams.", solution: "2-Session Deep Heat Spraying & Egg Removal", price: "Starts at ₹1,899" },
-  { name: "Rodents / Rats", emoji: "🐀", danger: "Wire Damage", sign: "Chewed electrical wires, nocturnal scratching sounds.", solution: "Tamper-Proof Baiting & Mechanical Traps", price: "Starts at ₹1,599" },
-  { name: "Mosquitoes", emoji: "🦟", danger: "Dengue Risk", sign: "Standing water breeding, evening swarm in balconies.", solution: "Cold Fogging & Bio-Larvicide Application", price: "Starts at ₹1,299" },
-  { name: "Wood Borer", emoji: "🪵", danger: "Furniture Decay", sign: "Fine yellow powder beneath wooden furniture.", solution: "Syringe Oil Chemical Injection", price: "Starts at ₹2,199" }
-];
-
-let selectedQuizIndex = 0;
-
-function renderPestQuiz() {
-  const container = document.getElementById("pestQuizContainer");
-  if (!container) return;
-
-  const current = PEST_QUIZ_DATA[selectedQuizIndex];
-
-  container.innerHTML = `
-    <div class="quiz-chips-row">
-      ${PEST_QUIZ_DATA.map((p, idx) => `
-        <button class="quiz-chip ${idx === selectedQuizIndex ? 'active' : ''}" onclick="selectQuizPest(${idx})">
-          ${p.emoji} ${p.name}
-        </button>
-      `).join('')}
-    </div>
-
-    <div class="quiz-detail-card">
-      <div class="quiz-card-top">
-        <div class="quiz-title-group">
-          <span class="quiz-emoji">${current.emoji}</span>
-          <div>
-            <h3>${current.name}</h3>
-            <span class="quiz-danger">Threat Level: ${current.danger}</span>
-          </div>
-        </div>
-        <span class="quiz-price-badge">${current.price}</span>
-      </div>
-
-      <div class="quiz-card-body">
-        <div class="quiz-info-block">
-          <strong>🚨 Key Infestation Signs:</strong>
-          <p>${current.sign}</p>
-        </div>
-        <div class="quiz-info-block">
-          <strong style="color: var(--primary);">🛡️ Recommended Delta Force Treatment:</strong>
-          <p style="font-weight: 600; color: var(--text-dark);">${current.solution}</p>
-        </div>
-      </div>
-
-      <button class="btn btn-primary btn-full" onclick="bookPresetService('${current.name} Control', '${current.price}')">
-        Book ${current.name} Treatment Now
-      </button>
-    </div>
-  `;
-}
-
-function selectQuizPest(index) {
-  selectedQuizIndex = index;
-  renderPestQuiz();
-}
 
 /* INITIALIZATION ON DOM LOAD */
 document.addEventListener("DOMContentLoaded", () => {
@@ -237,11 +208,11 @@ document.addEventListener("DOMContentLoaded", () => {
   renderServices();
   renderProcess();
   renderReviews();
-  renderPestQuiz();
   calculateEstimate();
 });
 
-/* CALCULATOR LOGIC */
+/* CALCULATOR LOGIC
+   Updates #calcEstimateText in index.html live whenever any of the 4 calculator selects change. */
 function calculateEstimate() {
   const propType = document.getElementById("calcPropertyType").value;
   const size = document.getElementById("calcPropertySize").value;
@@ -297,6 +268,13 @@ function renderServices() {
         <div class="service-icon">${s.icon}</div>
         <span class="service-badge">${s.badge}</span>
       </div>
+
+      <!-- Service photo placeholder. Once images/${s.imgPlaceholderId}.webp exists, replace this
+           placeholder-box with: <div class="service-img-placeholder"><img src="images/${s.imgPlaceholderId}.webp" alt="${s.title}"></div> -->
+      <div class="placeholder-box service-img-placeholder" data-placeholder-id="${s.imgPlaceholderId}">
+        <div class="placeholder-text">[PLACEHOLDER: ${s.title} service photo — Google Drawings 600x400]</div>
+      </div>
+
       <h3 class="service-title">${s.title}</h3>
       <p class="service-desc">${s.desc}</p>
       <ul class="service-features">
@@ -335,17 +313,20 @@ function renderReviews() {
     <!-- SAMPLE TESTIMONIAL — replace with real customer quote before going live -->
     <div class="review-card">
       <div class="review-top">
+        <!-- Customer photo placeholder (initials shown as a temporary fallback visual).
+             Once images/${r.photoPlaceholderId}.webp exists, replace this placeholder-box with:
+             <div class="review-img-placeholder"><img src="images/${r.photoPlaceholderId}.webp" alt="${r.name}"></div> -->
+        <div class="placeholder-box review-img-placeholder" data-placeholder-id="${r.photoPlaceholderId}" title="[PLACEHOLDER: Customer photo — Google Drawings 200x200 circular]">
+          ${r.name.split(' ').map(n => n[0]).join('')}
+        </div>
         <span class="review-stars">${r.stars}</span>
         <span class="review-verified">✔ Verified Customer</span>
       </div>
       <p class="review-comment">"${r.comment}"</p>
-      <div class="review-author" style="display: flex; align-items: center; gap: 12px; margin-top: 16px;">
-        <div class="avatar-circle" style="width: 42px; height: 42px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem;" title="${r.photoPlaceholder || ''}">
-          ${r.name.split(' ').map(n => n[0]).join('')}
-        </div>
+      <div class="review-author">
         <div>
-          <div class="review-name" style="font-weight: 700; font-size: 0.95rem;">${r.name}</div>
-          <div class="review-meta" style="font-size: 0.825rem; color: var(--text-muted);">${r.locality} • ${r.service}</div>
+          <div class="review-name">${r.name}</div>
+          <div class="review-meta">${r.locality} • ${r.service}</div>
         </div>
       </div>
     </div>
