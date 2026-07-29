@@ -5,7 +5,6 @@
 :root {
   --primary: #0F5132;          /* Deep Forest Green */
   --primary-dark: #083822;     /* Darker Forest Green */
-  --primary-light: #E0EDE7;    /* Light green for avatars etc. */
   --accent: #FFC107;           /* Warm Amber Accent */
   --accent-light: #FFECB3;     /* Light Amber Container */
   --charcoal: #1A1C1A;         /* High-contrast Charcoal Dark */
@@ -13,7 +12,6 @@
   --surface-white: #FFFFFF;    /* Clean Surface White */
   --border-color: #E2E8F0;     /* Border Neutral */
   --whatsapp-green: #25D366;   /* Official WhatsApp Green */
-  --text-muted: #6C757D;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 16px rgba(15, 81, 50, 0.12);
   --shadow-lg: 0 10px 30px rgba(15, 81, 50, 0.18);
@@ -368,6 +366,11 @@ body {
   color: #6C757D;
 }
 
+/* Rule 2 fix: dark/colored-background section headers get an explicit,
+   higher-specificity contextual override instead of a standalone
+   !important utility class. This targets the h2/p directly inside
+   .section-header.light-text (used on dark-bg sections like "Why Us"),
+   so contrast is guaranteed without needing !important anywhere. */
 .section-header.light-text h2 {
   color: var(--surface-white);
 }
@@ -516,8 +519,7 @@ body {
 .service-card {
   background-color: var(--surface-white);
   border-radius: var(--radius-md);
-  padding: 0;
-  overflow: hidden;
+  padding: 24px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border-color);
   display: flex;
@@ -533,37 +535,11 @@ body {
   border-color: var(--primary);
 }
 
-.service-img-placeholder {
-  width: 100%;
-  min-height: 160px;
-  background-color: #E2E8F0;
-  border-bottom: 2px dashed #A0AEC0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 16px;
-}
-
-.service-img-placeholder .placeholder-text {
-  font-size: 11px;
-  color: #4A5568;
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-.service-card-body {
-  padding: 20px 24px 24px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
 .service-card-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .service-icon {
@@ -623,6 +599,7 @@ body {
   font-weight: 800;
 }
 
+/* RULE 3 ALIGNMENT FOR CARDS */
 .service-card-bottom {
   margin-top: auto;
   display: flex;
@@ -784,23 +761,6 @@ body {
 
 .review-author {
   margin-top: auto;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.avatar-circle {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: var(--primary-light);
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 1rem;
-  flex-shrink: 0;
 }
 
 .review-name {
@@ -1015,7 +975,7 @@ body {
    ========================================================================== */
 @media (max-width: 768px) {
   .main-nav {
-    display: none;
+    display: none; /* Can be toggled if needed */
   }
   
   .calculator-card {
@@ -1037,7 +997,7 @@ body {
 }
 
 /* ==========================================================================
-   IMAGE PLACEHOLDER SYSTEM
+   RULE 4: CONSOLIDATED IMAGE PLACEHOLDER SYSTEM
    ========================================================================== */
 .placeholder-box {
   background-color: #E2E8F0;
