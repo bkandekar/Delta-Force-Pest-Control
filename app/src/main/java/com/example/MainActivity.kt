@@ -36,11 +36,14 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.ui.MainViewModel
 import com.example.ui.components.BookingDialog
 import com.example.ui.components.CalculatorSection
+import com.example.ui.components.ComparisonTableSection
 import com.example.ui.components.FooterSection
+import com.example.ui.components.GallerySection
 import com.example.ui.components.HeaderTopBar
 import com.example.ui.components.HeroSection
 import com.example.ui.components.MyBookingsSection
 import com.example.ui.components.PainPointsSection
+import com.example.ui.components.PestIdentifierQuizSection
 import com.example.ui.components.ProcessSection
 import com.example.ui.components.ReviewsSection
 import com.example.ui.components.ServicesSection
@@ -149,6 +152,8 @@ fun DeltaForcePestApp(viewModel: MainViewModel = viewModel()) {
                     "Why Us" -> {
                         WhyChooseUsSection()
                         Spacer(modifier = Modifier.height(16.dp))
+                        ComparisonTableSection()
+                        Spacer(modifier = Modifier.height(16.dp))
                         PainPointsSection()
                         Spacer(modifier = Modifier.height(16.dp))
                         ProcessSection()
@@ -184,6 +189,15 @@ fun DeltaForcePestApp(viewModel: MainViewModel = viewModel()) {
                             onCalculateCostClick = { viewModel.setActiveSection("Calculator") }
                         )
 
+                        PestIdentifierQuizSection(
+                            onSelectPestToBook = { pestName, price ->
+                                viewModel.openBookingDialog(
+                                    presetPestConcern = pestName,
+                                    presetEstimatedCost = price
+                                )
+                            }
+                        )
+
                         CalculatorSection(
                             viewModel = viewModel,
                             onBookPackageClick = { pest, propType, cost ->
@@ -204,9 +218,13 @@ fun DeltaForcePestApp(viewModel: MainViewModel = viewModel()) {
                             }
                         )
 
+                        ComparisonTableSection()
+
                         PainPointsSection()
 
                         WhyChooseUsSection()
+
+                        GallerySection()
 
                         ProcessSection()
 
